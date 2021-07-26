@@ -8,23 +8,23 @@ dist: focal
 
 # just master branch (verify branch name)
 branches:
-  only:
-    - main
+	only:
+		- main
 
 # Install dependencies
 addons:
-  apt:
-    packages:
-      - zsh
+	apt:
+		packages:
+			- zsh
 
 # environment must be defined
 # one build will be triggered for each line in the env array.
 env:
-  - TRAVISENVIRONMENT=yes
+	- TRAVISENVIRONMENT=yes
 
 # script to execute
 script:
- - ./test/clientTest.sh
+	- ./test/clientTest.sh
 
 # Generate and deploy documentation
 #
