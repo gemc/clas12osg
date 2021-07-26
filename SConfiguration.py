@@ -2,6 +2,8 @@
 #
 import os.path
 
+# version can be PRODUCTION or TEST
+
 class SConfiguration():
 
 	# constructor from Steering Card (scard) text file
@@ -62,13 +64,3 @@ class SConfiguration():
 #conf = SConfiguration('test.txt')
 #print(conf.client_ip)
 
-#class Book:
-#    def __init__(self, txtConfiguration: str):
-#        self.title = title
-#        self.author = author
-#        self.pages = pages
-#
-#    @classmethod
-#    def from_json(cls, book_as_json: str) -> 'Book':
-#    	book = json.loads(book_as_json)
-#    	return cls(title=book['title'], author=book['author'], pages=book['pages'])
