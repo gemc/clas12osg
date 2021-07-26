@@ -1,1 +1,2 @@
-# clas12osg
+# CLAS12 Simulation Portal to OSG
+
