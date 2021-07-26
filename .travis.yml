@@ -28,11 +28,11 @@ script:
 
 # Generate and deploy documentation
 #
-deploy:
+#deploy:
 #  provider: pages
 #  skip_cleanup: true
 #  local_dir: html
-  github_token: $GH_REPO_TOKEN
-  on:
-    branch: main
+#  github_token: $GH_REPO_TOKEN
+#  on:
+#    branch: main
 
