@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CLAS12 Monte-Carlo Simulations OSG Portal</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="main.css"/>
+	</head>
+	
+	<body>
+		<header class="w3-panel w3-container" id="myHeader">
+			<ul id="nav">
+				<li><a href="index.php">     Home</a></li>
+				<li><a href="about.html">    <h3><b>About</b></h3></a></li>
+				<li><a href="osgStats.html"> OSG Stats</a></li>
+				<li><a href="monitor.html">  Monitors</a></li>
+			</ul>
+
+			<div class="w3-center">
+				<h1 id="title" class="w3-xlarge w3-opacity"></h1>
+				<h2 class="w3-xlarge" style="text-align:right">Logged in as <img width = "160" src="username.php"/></h2>
+				<br/><br/>
+			</div>
+		</header>
+		<br/><br/>
+
+		<div class="w3-row-padding w3-rest" id="contact">
+
+			<h1>Submission workflow</h1>
+			<p style="margin-left: 40px">
+			When you click the "Submit" button:<br/>
+			<li style="margin-left: 60px"> <b>1</b>: Your submission is logged in our mysql db </li>
+			<li style="margin-left: 60px"> <b>2</b>: Within a few minutes your jobs will be submitted to OSG and visible in this portal.</li>
+			<li style="margin-left: 60px"> <b>3</b>: When the jobs are completed, the job will be delisted from the portal. </li>
+			<li style="margin-left: 60px"> <b>4</b>: The output directory is synced every hour on /volatile/clas12/osg2 (see "Output" below) once the job is completed</li>
+
+			</p>
+
+			<br/>
+
+			<h1>Number of events</h1>
+			<p style="margin-left: 40px">
+			The number of events (clas12 generators) are limited to 10,000 corresponding to a max CPU time on the OSG of ~10 hours.<br/>
+			Only 10,000 events will be processed for LUND files.<br/>
+			</p>
+			<br/>
+
+			<h1> Experiment Configurations </h1>
+			<p style="margin-left: 40px">
+			The available CLAS12 configurations correspond to the approved experiments. As of 8/24/2020:<br/>
+			<li style="margin-left: 60px"> <b>rga_spring2018</b>: RGA spring 2018 configuration  </li>
+			<li style="margin-left: 60px"> <b>rga_fall2018</b>:   RGA fall 2018 configuration</li>
+			<li style="margin-left: 60px"> <b>rgk_fall2018_FTOn</b>:   RGA fall 2018 configuration with FT On</li>
+			<li style="margin-left: 60px"> <b>rgk_fall2018_FTOff</b>:  RGK fall 2018 configuration with FT Off</li>
+			<li style="margin-left: 60px"> <b>rgb_spring2019</b>: RGB spring 2019  </li>
+			<li style="margin-left: 60px"> <b>rga_spring2019</b>: RGA spring 2019 </li>
+			<li style="margin-left: 60px"> <b>rgb_fall2019</b>:   RGB fall 2019  </li>
+			</p>
+			<br/>
+
+			<h1> Background Merging </h1>
+			<p style="margin-left: 40px">
+			The user choice of experiment and magnetic fieds enable the possibility of backgrond merging
+			in the dropdown menu.<br/>
+			If selected, a random file among the available pool (files of 10k events each) is merged
+			to the simulated events before reconstruction.
+			</p>
+			<br/>
+
+			<h1> Output </h1>
+			<p style="margin-left: 40px">
+			The output is synced hourly on
+			</p>
+			<pre style="font-size: 20px">	/volatile/clas12/osg2/"username"/job_ID </pre>
+			<p style="margin-left: 40px">
+			where "<b>username</b>" is your jlab account name and <b>ID</b> is the submission ID.<br/>
+			Individual "subjobs" are organized in subdirs named <b>simu_SJID</b>, where SJID is the subjob id.
+			If you submit 500 jobs, SJID will run from 0 to 499.<br>
+			</p>
+			<br/>
+
+
+			<h1> Priority </h1>
+			<p style="margin-left: 40px">
+			We have in place a priority system to ensure that the resources are shared among all submissions.<br/>
+			Analysis groups can submit the <a href="Priority Permission Increase Form.pdf">  Priority Permission Increase Form </a>
+			to increase an account priority.<br/>
+			<p style="margin-left: 40px">
+			<br/>
+
+
+			<h1> Versions </h1>
+
+			<p style="margin-left: 40px">
+			The software versions of the CLAS12 generators, gemc simulation and coatjava reconstruction are:
+			</p>
+
+			<ul>
+				<li style="margin-left: 50px">  <a href="https://github.com/JeffersonLab/clas12-mcgen">clas12-mcgen</a>:  2.1 </li>
+				<li style="margin-left: 50px">  <a href="https://github.com/gemc/clas12Tags">Gemc</a> and
+					<a href="https://github.com/gemc/clas12Tags">clas12 geometry</a>:  4.4.1 </li>
+				<li style="margin-left: 50px"> <a href="https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Center#tab=Reconstruction">Coatjava</a>:
+					<ul>
+						<li style="margin-left: 50px"> 6.5.9 (rgb) </li>
+						<li style="margin-left: 50px"> 6.5.6.1 (rga and rgk) </li>
+					</ul>
+				</li>
+				<br/>
+			</ul>
+
+			For informations about upcoming or older releases of the docker/singularity images visit <a href="https://hub.docker.com/repository/docker/jeffersonlab/clas12software">jeffersonlab/clas12software</a> hub
+
+			<h1> Container for Interactive Use </h1>
+
+			<p style="margin-left: 40px">
+			The docker container used on OSG is also available for interactive use, see
+			the <a href="https://clasweb.jlab.org/clas12/clas12SoftwarePage/html/index.html"> docker distribution </a> page
+			for details.
+			</p>
+
+			<br/>
+			<br/>
+			<hr>
+
+			<center>
+
+				<table style=" width:70%; text-align:center; border: 0px; border-collapse: collapse;">
+					<tr >
+						<th style="border-collapse:collapse; border: 0px;"></th>
+						<th style="border-collapse:collapse; border: 0px;"> <h2> Contacts and Support </h2>
+						</th>
+						<th style="border-collapse:collapse; border: 0px;"></th>
+					</tr >
+					<tr >
+						<th style="border-collapse:collapse; border: 0px;"> <h3> JLab </h3>
+							<a href="mailto:baltzell@jlab.org">Nathan Baltzell</a><br/>
+							<a href="mailto:ungaro@jlab.org">Maurizo Ungaro</a>
+						</th>
+						<th style="border-collapse:collapse; border: 0px;"> <h3> MIT </h3>
+							<a href="mailto:robertej@mit.edu">Bobby Johnston</a><br/>
+							<a href="mailto:sangbaek@mit.edu">Sangbaek Lee</a><br/>
+							<a href="mailto:moranp@mit.edu">Patrick Moran</a>
+						</th>
+						<th style="border-collapse:collapse; border: 0px;"> <h3> Additional Resources </h3>
+							<a href="https://clas12.discourse.group/c/simulation/9">Discourse</a><br/>
+							<a href="https://clasweb.jlab.org/clas12/clas12SoftwarePage/html/index.html">Docker  Distribution</a><br/>
+							<a href="https://github.com/JeffersonLab/clas12-mcgen">clas12-mcgen Repo</a><br/>
+						</th>
+					</tr>
+
+				</table>
+			</center>
+
+
+		</div>
+
+	</body>
+
+	<script src="main.js"></script>		<!-- Don't move this line to the top! It causes an error at Safari -->
+
+</html>

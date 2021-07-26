@@ -1,0 +1,3 @@
+- extra flag to distinguish between type 1 and type 2 in the submission (done)
+- subdir 'submissions' to keep last 10 days history of submissions (need cronjob to delete files older than 30 days or so)
+
