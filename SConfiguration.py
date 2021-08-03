@@ -1,25 +1,34 @@
 # SConfiguration class definition
 #
 import os.path
+import sys
 
-# version can be PRODUCTION or TEST
+
+# version can be production or devel, passed through the steering card
+# - production will use the CLAS12TEST table
+# - devel will use the CLAS12OCR table
+#
+# connection can be mysql or sqlite, passed through the steering card
+# - mysql will set the connection to
+# - sqlite will set the filename to
 
 class SConfiguration():
 
 	# constructor from Steering Card (scard) text file
 	def __init__(self, scardFile):
 
-		self.file           = None
-		self.content        = None
-		self.type           = None
-		self.version        = None
-		self.username       = None
-		self.project        = None
-		self.configuration  = None
-		self.generator      = None
+		self.file           = None   # steering card file
+		self.content        = None   # full content of steering card
+		self.project        = None   # OSG project
+		self.type           = None   # submission type: 1 or 2
+		self.connection     = None   # connection: mysql or sqlite
+		self.version        = None   # portal version (production or devel)
+		self.username       = None   # username
+		self.configuration  = None   # configuration: rga, rgb, etc
+		self.generator      = None   # generator: 
 		self.genOptions     = None
 		self.nevents        = None
-		self.jobs           = None
+		self.njobs          = None
 		self.client_ip      = None
 		self.fields         = None
 		self.torus          = None
@@ -57,6 +66,26 @@ class SConfiguration():
 				setattr(self, key, value)
 			else:
 				sys.exit('Fatal error: key {0} not found in scard content'.format(key))
+
+	def show(self):
+		print('SConfiguration:');
+		print('- file:          {0}'.format(self.file));
+		print('- project:       {0}'.format(self.project));
+		print('- type:          {0}'.format(self.type));
+		print('- connection:    {0}'.format(self.connection));
+		print('- version:       {0}'.format(self.version));
+		print('- username:      {0}'.format(self.username));
+		print('- configuration: {0}'.format(self.configuration));
+		print('- generator:     {0}'.format(self.generator));
+		print('- genOptions:    {0}'.format(self.genOptions));
+		print('- nevents:       {0}'.format(self.nevents));
+		print('- njobs:         {0}'.format(self.njobs));
+		print('- client_ip:     {0}'.format(self.client_ip));
+		print('- torus:         {0}'.format(self.torus));
+		print('- solenoid:      {0}'.format(self.solenoid));
+		print('- bkmerging:     {0}'.format(self.bkmerging));
+
+
 
 #	def from_database(mysqlDatabase) -> 'GConfiguration':
 

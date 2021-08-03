@@ -46,9 +46,10 @@
 
 				if (!empty($project) && !empty($configuration) && !empty($fields)&& !empty($bkmerging) && !empty($lundFiles) ) {
 					$fp = fopen($fname, 'w');
+					fwrite($fp, 'project: '.$project.PHP_EOL);
+					fwrite($fp, 'connection: mysql'.PHP_EOL);
 					fwrite($fp, 'type: 2'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
-					fwrite($fp, 'project: '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
 					fwrite($fp, 'generator: '.$lundFiles.PHP_EOL);
 

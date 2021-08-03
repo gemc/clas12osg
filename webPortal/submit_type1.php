@@ -46,14 +46,15 @@
 
 				if (!empty($project) && !empty($configuration) && !empty($fields)&& !empty($bkmerging) && !empty($generator) && !empty($nevents) && !empty($jobs) ) {
 					$fp = fopen($fname, 'w');
+					fwrite($fp, 'project: '.$project.PHP_EOL);
+					fwrite($fp, 'connection: mysql'.PHP_EOL);
 					fwrite($fp, 'type: 1'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
-					fwrite($fp, 'project: '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
 					fwrite($fp, 'generator: '.$generator.PHP_EOL);
 					fwrite($fp, 'genOptions: '.$genOptions.PHP_EOL);
 					fwrite($fp, 'nevents: '.$nevents.PHP_EOL);
-					fwrite($fp, 'jobs: '.$jobs.PHP_EOL);
+					fwrite($fp, 'njobs: '.$jobs.PHP_EOL);
 					fwrite($fp, 'client_ip: '.$client_ip.PHP_EOL);
 					fwrite($fp, 'fields: '.$fields.PHP_EOL);
 					fwrite($fp, 'bkmerging: '.$bkmerging.PHP_EOL);
