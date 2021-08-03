@@ -4,14 +4,6 @@ import os.path
 import sys
 
 
-# version can be production or devel, passed through the steering card
-# - production will use the CLAS12TEST table
-# - devel will use the CLAS12OCR table
-#
-# connection can be mysql or sqlite, passed through the steering card
-# - mysql will set the connection to
-# - sqlite will set the filename to
-
 class SConfiguration():
 
 	# constructor from Steering Card (scard) text file
@@ -25,7 +17,7 @@ class SConfiguration():
 		self.version        = None   # portal version (production or devel)
 		self.username       = None   # username
 		self.configuration  = None   # configuration: rga, rgb, etc
-		self.generator      = None   # generator: 
+		self.generator      = None   # generator name for type 1, or address for type2
 		self.genOptions     = None
 		self.nevents        = None
 		self.njobs          = None
@@ -87,9 +79,6 @@ class SConfiguration():
 
 
 
-#	def from_database(mysqlDatabase) -> 'GConfiguration':
-
-
-#conf = SConfiguration('test.txt')
-#print(conf.client_ip)
-
+# python SConfiguration.py
+conf = SConfiguration('test/t1test1.txt')
+conf.show()

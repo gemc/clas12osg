@@ -4,9 +4,11 @@
 import sys
 sys.path.append("..")
 sys.path.append(".")
+sys.path.append("database")
 
 import options
 from SConfiguration import SConfiguration
+from Database import Database
 
 # get command line arguments, log to screen
 args = options.get_args()

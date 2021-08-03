@@ -24,5 +24,6 @@ env:
 
 # script to execute
 script:
-  - ./test/clientTest.sh
+  - ./test/clientTests.sh
+  - ./test/sbTests.sh
 
