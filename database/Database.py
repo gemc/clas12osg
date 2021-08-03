@@ -30,8 +30,8 @@ class Database():
 
 	def show(self):
 		print('Database:');
-		print('- dbtype:          {0}'.format(self.dbtype));
-		print('- version:          {0}'.format(self.version));
+		print('- dbtype:   {0}'.format(self.dbtype));
+		print('- version:  {0}'.format(self.version));
 
 
 #db = Database()

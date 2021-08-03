@@ -78,7 +78,7 @@ class SConfiguration():
 		print('- bkmerging:     {0}'.format(self.bkmerging));
 
 
-
+# running this as stand-alone:
 # python SConfiguration.py
-conf = SConfiguration('test/t1test1.txt')
-conf.show()
+#conf = SConfiguration('test/t1test1.txt')
+#conf.show()
