@@ -25,7 +25,7 @@ void OSG_Validate(int job1, std::string comment1, int job2, std::string comment2
     std::replace(label2.begin(), label2.end(), ' ', '_');
     std::string label3 = comment3;
     std::replace(label3.begin(), label3.end(), ' ', '_');
-    
+
 
     TLatex *lat1 = new TLatex();
     lat1->SetNDC();
