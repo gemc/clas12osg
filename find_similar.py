@@ -44,7 +44,7 @@ def parse_generator_and_options(scard_text: str):
     )
     gen_options = genopt_match.group(1).strip() if genopt_match else ""
 
-    # 3) fallback: e.g. "clasdisgenOptions: ...", "MCEGENpiN_radcorrgenOptions: ..."
+    # 3) fallback: e.g. "clasdisgenOptions: ...", "..."
     if not generator:
         m = re.search(r'(\S+)\s*genOptions:', scard_text)
         if m:
@@ -347,9 +347,9 @@ def main():
         description="Find and quantify 'similar' generator submissions in a date range."
     )
 
-    parser.add_argument("--start_date", type=str, default="2025-01-01",
+    parser.add_argument("--start_date", type=str, default="2024-06-01",
                         help="Start date in YYYY-MM-DD format")
-    parser.add_argument("--end_date", type=str, default="2025-11-05",
+    parser.add_argument("--end_date", type=str, default="2025-12-05",
                         help="End date in YYYY-MM-DD format (optional)")
 
     # Default: filter out submissions with empty generator options
@@ -387,3 +387,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
